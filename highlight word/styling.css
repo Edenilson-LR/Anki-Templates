@@ -1,0 +1,129 @@
+.card {
+    display: block;
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+/* parte frontal */
+.front {
+    display: block;
+    padding: 15px 20px 15px 20px;
+    border-radius: 1em;
+    color: #fffafe;
+    background-color: #002c5b;
+    box-shadow: .5px 2px .5px 2px #565074;
+}
+
+/* parte trasera o reverso*/
+.back {
+    display: block;
+    padding: 15px 20px 15px 20px;
+    border-radius: 1em;
+    color: #fffafe;
+    background-color: #002c5b;
+    box-shadow: 1px 3px 1px 4px #565074;
+}
+
+/* imagen*/
+.imagen {
+    border-radius: 1em;
+    min-height: 200px;
+    max-width: 500px;
+}
+
+/* contenerdor principal */
+.flashcard {
+    display: block;
+    padding: 15px 20px 15px 20px;
+    min-height: 200px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 1em;
+    background-color: #f3f3f3;
+    align-content: center;
+    box-shadow: 1px 3px 1px 2px #305555;
+}
+
+/* hr edicion */
+hr {
+    border: 0;
+    border-bottom: 1px solid rgb(36, 176, 211);
+    margin-bottom: 15px;
+}
+
+/* Configuacion modo Noche */
+
+.nightMode .flashcard {
+    display: block;
+    padding: 15px 20px 15px 20px;
+    min-height: 200px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 1em;
+    background-color: #304f5a;
+}
+
+.nightMode .front {
+    display: block;
+    padding: 15px 20px 15px 20px;
+    border-radius: 1em;
+    color: #009999;
+    background-color: #093e52;
+    box-shadow: .5px 2px .5px 2px #b2cedd;
+}
+
+.nightMode .back {
+    display: block;
+    padding: 15px 20px 15px 20px;
+    border-radius: 1em;
+    color: #009999;
+    background-color: #093e52;
+    box-shadow: .5px 2px .5px 2px #b2cedd;
+}
+
+.nightMode .replay-button svg circle {
+    fill: #000000;
+}
+
+.nightMode .replay-button svg path {
+    stroke: #e0ebf1;
+    fill: #b2cedd;
+
+}
+
+.nightMode hr {
+    border-color: #0a2525;
+}
+
+/* Word highlighting styles - better contrast and harmony */
+.highlight-word {
+    color: #d4af37;
+    /* Dorado suave que contrasta bien con azul oscuro */
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-traduccion {
+    color: #ff6b6b;
+    /* Coral suave que complementa la paleta */
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Night mode highlighting - colors that harmonize with the teal theme */
+.nightMode .highlight-word {
+    color: #ffd700;
+    /* Dorado más brillante para modo nocturno */
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nightMode .highlight-traduccion {
+    color: #ff9999;
+    /* Rosa coral suave para modo nocturno */
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}

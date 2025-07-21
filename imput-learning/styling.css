@@ -1,0 +1,473 @@
+/* 
+   Anki Card Styling - Diseño minimalista y elegante
+   Creado para tarjetas de aprendizaje de idiomas
+*/
+
+/* Variables CSS para la paleta de colores */
+:root {
+  /* Colores base */
+  --color-dark-blue: #22223B;
+  --color-blue-gray: #4A4E69;
+  --color-mauve: #9A8C98;
+  --color-pale-pink: #C9ADA7;
+  --color-light-beige: #F2E9E4;
+  
+  /* Modo claro */
+  --background-primary: var(--color-light-beige);
+  --background-secondary: var(--color-pale-pink);
+  --text-primary: var(--color-dark-blue);
+  --text-secondary: var(--color-blue-gray);
+  --accent: var(--color-mauve);
+  --separator: var(--color-pale-pink);
+  
+  /* Tipografía */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-size-base: 16px;
+  --font-size-word: 24px;
+  --font-size-phonetic: 14px;
+  --font-size-definition: 16px;
+  --font-size-example: 15px;
+  
+  /* Espaciado */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 30px;
+  
+  /* Bordes */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+}
+
+/* Estilos generales */
+.card {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estructura general de la tarjeta */
+.flashcard {
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Separadores */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--separator);
+  margin: var(--spacing-md) 0;
+  opacity: 0.7;
+}
+
+/* Modo oscuro */
+.nightMode.card {
+  --background-primary: var(--color-dark-blue);
+  --background-secondary: var(--color-blue-gray);
+  --text-primary: var(--color-light-beige);
+  --text-secondary: var(--color-pale-pink);
+  --accent: var(--color-mauve);
+  --separator: var(--color-blue-gray);
+}
+
+/* Ajustes específicos para elementos en modo oscuro */
+.nightMode hr {
+  background-color: var(--separator);
+}
+
+.nightMode hr#answer {
+  background-color: var(--accent);
+}
+
+.nightMode .wordphonetic,
+.nightMode .sentences-translation {
+  color: var(--text-secondary);
+}
+
+.nightMode .replay-button svg circle {
+  fill: var(--accent);
+}
+
+.nightMode .replay-button svg path {
+  stroke: var(--background-primary);
+}
+
+.nightMode .hint {
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+}
+
+.nightMode .img img {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Transición suave entre modos */
+.card {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Estilos para la parte frontal */
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.word-wrapper {
+  margin-bottom: var(--spacing-md);
+}
+
+.word {
+  font-size: var(--font-size-word);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.en-font {
+  font-family: var(--font-primary);
+}
+
+/* Efecto sutil al cargar la tarjeta */
+.flashcard {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Estilos para los botones de audio */
+.replay-button svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: var(--spacing-xs);
+}
+
+.replay-button svg circle {
+  fill: var(--accent);
+}
+
+.replay-button svg path {
+  stroke: var(--background-primary);
+  fill: none;
+}
+
+/* Efecto hover para los botones de audio */
+.replay-button:hover svg circle {
+  fill: var(--text-secondary);
+  transition: fill 0.2s ease;
+}
+
+/* Estilos específicos para el audio de la palabra */
+.wordaudio {
+  display: inline-block;
+  margin-left: var(--spacing-xs);
+}
+
+/* Estilos específicos para el audio de la oración */
+#sentenceAudio {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+}
+
+/* Estilos para la parte trasera */
+.back {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+}
+
+/* Separador de respuesta */
+hr#answer {
+  height: 2px;
+  background-color: var(--accent);
+  margin: var(--spacing-lg) 0;
+  opacity: 0.8;
+}
+
+/* Contenedores de secciones */
+.back > div {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Espaciado entre secciones */
+.back hr {
+  margin: var(--spacing-md) 0;
+}
+
+/* Estilos para elementos individuales del reverso */
+/* Palabra principal */
+.back .word {
+  font-size: var(--font-size-word);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Fonética */
+.wordphonetic {
+  font-size: var(--font-size-phonetic);
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Definición */
+.definition {
+  font-size: var(--font-size-definition);
+  line-height: 1.6;
+  margin: var(--spacing-md) 0;
+  color: var(--text-primary);
+}
+
+/* Traducción de la definición */
+.definition-translation {
+  font-size: var(--font-size-definition);
+  color: var(--text-secondary);
+  margin: var(--spacing-md) 0;
+  line-height: 1.6;
+}
+
+/* Oración de ejemplo */
+.sentence {
+  font-size: var(--font-size-example);
+  font-style: italic;
+  margin: var(--spacing-md) 0 var(--spacing-xs);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Traducción de la oración */
+.sentences-translation {
+  font-size: var(--font-size-example);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+/* Estilos para las pistas (hints) */
+.hint {
+  color: var(--accent);
+  cursor: pointer;
+  border-bottom: 1px dashed var(--accent);
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+/* Estilo para el botón de mostrar pista */
+a.hint-reveal {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-left: var(--spacing-xs);
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+a.hint-reveal:hover {
+  opacity: 1;
+}
+
+/* Estilo para la pista revelada */
+.hint-revealed {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Estilos para las imágenes */
+.img {
+  text-align: center;
+  margin: var(--spacing-md) 0;
+}
+
+.img img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Asegurar que las imágenes no desborden en dispositivos móviles */
+@media (max-width: 480px) {
+  .img img {
+    max-height: 150px;
+  }
+}
+
+/* Compatibilidad con AnkiDroid */
+.mobile .img img {
+  max-width: 100% !important;
+  max-height: 200px !important;
+}
+
+.android .img img {
+  max-width: 100% !important;
+  max-height: 200px !important;
+}
+
+/* Reglas de responsividad */
+@media (max-width: 480px) {
+  .flashcard {
+    padding: var(--spacing-sm);
+  }
+  
+  .front {
+    min-height: 150px;
+  }
+  
+  .word {
+    font-size: calc(var(--font-size-word) - 4px);
+  }
+  
+  .back {
+    margin-top: var(--spacing-md);
+  }
+  
+  hr#answer {
+    margin: var(--spacing-md) 0;
+  }
+  
+  .back .word {
+    font-size: calc(var(--font-size-word) - 4px);
+  }
+  
+  .definition, .definition-translation {
+    font-size: calc(var(--font-size-definition) - 1px);
+  }
+  
+  .sentence, .sentences-translation {
+    font-size: calc(var(--font-size-example) - 1px);
+  }
+  
+  .replay-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Estilos para el cronómetro */
+.timer-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.timer-icon:hover {
+  opacity: 1;
+}
+
+.timer-container {
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.timer-container.visible {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#timer {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-primary);
+}
+
+.timer-controls {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.timer-controls button {
+  background-color: var(--accent);
+  color: var(--background-primary);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.timer-controls button:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Estilos para el cronómetro en modo oscuro */
+.nightMode .timer-container {
+  background-color: var(--background-secondary);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nightMode #timer {
+  color: var(--text-primary);
+}
+
+.nightMode .timer-controls button {
+  background-color: var(--accent);
+  color: var(--background-primary);
+}
+
+.nightMode .timer-controls button:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Responsividad para el cronómetro */
+@media (max-width: 480px) {
+  .timer-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .timer-container {
+    padding: 8px;
+  }
+  
+  #timer {
+    font-size: 18px;
+  }
+  
+  .timer-controls button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}

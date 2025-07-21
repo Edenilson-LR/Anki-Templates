@@ -1,0 +1,10 @@
+1 Word
+2 Translation
+3 Word Phonetic
+4 Sentence
+5 Sentence Translation
+Definition
+Definition translation
+Word Audio
+Picture
+Sentence Audio

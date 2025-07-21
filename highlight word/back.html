@@ -1,0 +1,88 @@
+<div class="flashcard">
+    <div class="front">
+        <span id="palabra">{{Palabra}}</span>
+        <hr>
+        <div class="audio"> {{Audio}} </div>
+    </div>
+    <hr>
+    <div class="back">
+        <div class="traduccion-p">{{Traduccion P}}</div>
+        <hr>
+
+        <div class="Imagen"> {{Imagen}} </div>
+
+        <hr>
+        <div class="oracion" id="oracion">
+            {{Oracion}}
+        </div>
+        {{audio oracion}}
+    </div>
+
+    <script>
+        function doHighlight() {
+            try {
+                var palabra = document.getElementById('palabra');
+                var oracion = document.getElementById('oracion');
+                var traduccion = document.querySelector('.traduccion-p');
+
+                if (!palabra || !oracion) return;
+
+                var wordToFind = palabra.textContent.trim().toLowerCase();
+                
+                // Highlight translation
+                if (traduccion && traduccion.textContent.trim()) {
+                    var transText = traduccion.textContent.trim();
+                    traduccion.innerHTML = '<span class="highlight-traduccion">' + transText + '</span>';
+                }
+
+                // Get sentence text
+                var sentence = oracion.textContent || oracion.innerText || '';
+                if (!sentence.trim()) return;
+
+                // Simple word variations
+                var words = [wordToFind];
+                
+                // Add common variations
+                if (wordToFind === 'run') {
+                    words.push('ran', 'running', 'runs', 'runed');
+                }
+                if (wordToFind === 'correr') {
+                    words.push('corro', 'corres', 'corre', 'corrí', 'corrió');
+                }
+                
+                // Add basic endings
+                words.push(wordToFind + 'ed');
+                words.push(wordToFind + 'ing');
+                words.push(wordToFind + 's');
+                words.push(wordToFind + 'd');
+
+                // Highlight each word
+                var result = sentence;
+                for (var i = 0; i < words.length; i++) {
+                    var word = words[i];
+                    if (word && word.length > 1) {
+                        var regex = new RegExp('\\b' + word + '\\b', 'gi');
+                        result = result.replace(regex, '<span class="highlight-word">' + word + '</span>');
+                    }
+                }
+
+                oracion.innerHTML = result;
+            } catch (e) {
+                console.log('Error:', e);
+            }
+        }
+
+        // Try multiple times to ensure it works
+        setTimeout(doHighlight, 10);
+        setTimeout(doHighlight, 100);
+        setTimeout(doHighlight, 300);
+        setTimeout(doHighlight, 1000);
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', doHighlight);
+        } else {
+            doHighlight();
+        }
+    </script>
+
+</div>
