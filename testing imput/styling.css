@@ -54,11 +54,13 @@
 
 /* Estructura general de la tarjeta */
 .flashcard {
-  padding: var(--spacing-lg);
-  border-radius: var(--border-radius-md);
+  display: block;
+  padding: 0 24px 20px 24px;
+  border-radius: 10px;
   max-width: 600px;
   margin: 0 auto;
   box-sizing: border-box;
+  box-shadow: 0 5px 10px -5px var(--color-pale-pink);
 }
 
 /* Separadores */
@@ -158,8 +160,8 @@ hr {
 
 /* Estilos para los botones de audio */
 .replay-button svg {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   vertical-align: middle;
   margin-left: var(--spacing-xs);
 }
