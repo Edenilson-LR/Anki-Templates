@@ -1,0 +1,138 @@
+<div class="flashcard">
+    <div class="front">
+        <span id="palabra">{{French Word}}</span>
+        <hr>
+        <div class="audio"> {{French Audio}} </div>
+    </div>
+    <hr>
+    <div class="back">
+        <div class="traduccion-p">{{French Translation}}</div>
+        <hr>
+
+        <div class="Imagen"> {{French Image}} </div>
+
+        <hr>
+        <div class="oracion" id="oracion">
+            {{French Sentence}}
+        </div>
+        {{French Sentence Audio}}
+    </div>
+
+    <script>
+        // Función para inicializar el resaltado
+        window.onload = function () {
+            setTimeout(doHighlight, 1500);
+        };
+
+        // Función de resaltado adaptada para francés
+        function doHighlight() {
+            try {
+                var palabra = document.getElementById('palabra');
+                var oracion = document.getElementById('oracion');
+                var traduccion = document.querySelector('.traduccion-p');
+
+                if (!palabra || !oracion) return;
+
+                var wordToFind = palabra.textContent.trim();
+                
+                // Highlight translation
+                if (traduccion && traduccion.textContent.trim()) {
+                    var transText = traduccion.textContent.trim();
+                    traduccion.innerHTML = '<span class="highlight-traduccion">' + transText + '</span>';
+                }
+
+                // Get sentence text
+                var sentence = oracion.textContent || oracion.innerText || '';
+                if (!sentence.trim()) return;
+
+                // Para francés, buscamos la palabra exacta y sus variaciones comunes
+                var words = [wordToFind];
+                
+                // Agregar variaciones comunes del francés
+                // Verbos regulares -er
+                if (wordToFind.endsWith('er')) {
+                    var stem = wordToFind.slice(0, -2); // Quitar 'er'
+                    words.push(stem + 'e');     // je/il/elle forme
+                    words.push(stem + 'es');    // tu forme
+                    words.push(stem + 'ons');   // nous forme
+                    words.push(stem + 'ez');    // vous forme
+                    words.push(stem + 'ent');   // ils/elles forme
+                    words.push(stem + 'é');     // participe passé
+                    words.push(stem + 'ée');    // participe passé féminin
+                    words.push(stem + 'és');    // participe passé masculin pluriel
+                    words.push(stem + 'ées');   // participe passé féminin pluriel
+                }
+                
+                // Verbos regulares -ir
+                if (wordToFind.endsWith('ir')) {
+                    var stem = wordToFind.slice(0, -2); // Quitar 'ir'
+                    words.push(stem + 'is');    // je/tu forme
+                    words.push(stem + 'it');    // il/elle forme
+                    words.push(stem + 'issons'); // nous forme
+                    words.push(stem + 'issez');  // vous forme
+                    words.push(stem + 'issent'); // ils/elles forme
+                    words.push(stem + 'i');     // participe passé
+                }
+                
+                // Sustantivos con género y número
+                // Agregar formas plurales comunes
+                if (!wordToFind.endsWith('s') && !wordToFind.endsWith('x')) {
+                    words.push(wordToFind + 's');   // plural regular
+                }
+                if (wordToFind.endsWith('eau') || wordToFind.endsWith('eu')) {
+                    words.push(wordToFind + 'x');   // plural en -x
+                }
+                
+                // Adjetivos con concordancia
+                if (wordToFind.endsWith('e')) {
+                    words.push(wordToFind + 's');   // plural
+                } else {
+                    words.push(wordToFind + 'e');   // féminin
+                    words.push(wordToFind + 's');   // masculin pluriel
+                    words.push(wordToFind + 'es');  // féminin pluriel
+                }
+
+                // Artículos y contracciones comunes
+                words.push('le ' + wordToFind);
+                words.push('la ' + wordToFind);
+                words.push('les ' + wordToFind);
+                words.push('un ' + wordToFind);
+                words.push('une ' + wordToFind);
+                words.push('des ' + wordToFind);
+                words.push('du ' + wordToFind);
+                words.push('de la ' + wordToFind);
+                words.push('de l\'' + wordToFind);
+                words.push('au ' + wordToFind);
+                words.push('aux ' + wordToFind);
+
+                // Highlight each word
+                var result = sentence;
+                for (var i = 0; i < words.length; i++) {
+                    var word = words[i];
+                    if (word && word.length > 0) {
+                        // Usar word boundaries para francés
+                        var regex = new RegExp('\\b' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'gi');
+                        result = result.replace(regex, '<span class="highlight-word">' + word + '</span>');
+                    }
+                }
+
+                oracion.innerHTML = result;
+            } catch (e) {
+                console.log('Error:', e);
+            }
+        }
+
+        // Try multiple times to ensure it works
+        setTimeout(doHighlight, 10);
+        setTimeout(doHighlight, 100);
+        setTimeout(doHighlight, 300);
+        setTimeout(doHighlight, 1000);
+        setTimeout(doHighlight, 2000);
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', doHighlight);
+        } else {
+            doHighlight();
+        }
+    </script>
+</div>
