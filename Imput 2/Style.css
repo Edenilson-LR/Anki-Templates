@@ -1,0 +1,41 @@
+:root {
+    --primary--color: #90caf9;
+    --secondary--color: #9fa8da;
+    --background--color: #0d47a1;
+    --second--background: #1a237e;
+    --primary--card: #42a5f5;
+    --secondary--card: #5c6bc0;
+}
+/* Light Color */
+.flashcard {
+    background:var(--primary--card);
+    display: block;
+    align-items: center;
+    padding: 20px;
+    max-width: 500px;
+    min-height: 200px;
+    border-radius: 1em;
+    box-shadow: 2px, 2px, 1px, 2px, #c5cae9;
+}
+.front {
+    background-color: var(--background--color);
+    color: var(--primary--color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 1em;
+    padding: 25px;
+  }
+.back {
+  background-color: var(--background--color);
+  color: var(--primary--color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 1em;
+  padding: 10px;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid var(--primary--color);
+    margin-bottom: 32px;
+
+}
+

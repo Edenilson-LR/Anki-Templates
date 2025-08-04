@@ -1,0 +1,91 @@
+:root {
+  --light--background: #e0f2f1;
+  --primary--color: #005245;
+  --background--color: #74c3bb;
+  --night--background: #546e7a;
+  --nightbacground--color: #455a64;
+  --second--color: #b0bec5;
+
+}
+.card{
+  background: var(--light--background);
+}
+.nightMode .card{
+  background: var(--nightbacground--color);
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 200px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  min-height: 200px;
+  backface-visibility: hidden;
+  padding: 20px;
+  border-radius: 1em;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--background--color);
+  color: var(--primary--color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.nightMode .card-front,
+.nightMode .card-back {
+  background-color: var(--night--background);
+  color: var(--second--color);
+  box-shadow: 2px 4px 12px rgba(165, 165, 165, 0.418);
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .card-wrapper {
+    padding: 10px;
+    min-height: auto;
+  }
+  
+  .card-inner {
+    max-width: 100%;
+    min-height: 150px;
+  }
+  
+  .card-front,
+  .card-back {
+    min-height: 150px;
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-wrapper {
+    padding: 5px;
+  }
+  
+  .card-front,
+  .card-back {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
