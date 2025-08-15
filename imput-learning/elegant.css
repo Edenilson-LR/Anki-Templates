@@ -1,9 +1,4 @@
-/* 
-   Anki Card Styling - Diseño minimalista y elegante
-   Creado para tarjetas de aprendizaje de idiomas
-*/
-
-/* Variables CSS para la paleta de colores */
+/* Designed using IA */
 :root {
   /* Colores base */
   --color-dark-blue: #22223B;
@@ -49,15 +44,16 @@
   line-height: 1.5;
   text-align: left;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 /* Estructura general de la tarjeta */
 .flashcard {
   display: block;
-  padding: 0 24px 20px 24px;
+  padding: 10px 10px 10px 10px;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 500px;
+  min-height: 200px;
   margin: 0 auto;
   box-sizing: border-box;
   box-shadow: 0 5px 10px -5px var(--color-pale-pink);
@@ -367,109 +363,3 @@ a.hint-reveal:hover {
   }
 }
 
-/* Estilos para el cronómetro */
-.timer-icon {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  z-index: 1000;
-  opacity: 0.7;
-  transition: opacity 0.2s ease;
-}
-
-.timer-icon:hover {
-  opacity: 1;
-}
-
-.timer-container {
-  position: fixed;
-  top: 50px;
-  right: 10px;
-  background-color: var(--background-secondary);
-  border-radius: var(--border-radius-md);
-  padding: var(--spacing-sm);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  z-index: 999;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.timer-container.visible {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#timer {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: var(--spacing-xs);
-  color: var(--text-primary);
-}
-
-.timer-controls {
-  display: flex;
-  gap: var(--spacing-xs);
-}
-
-.timer-controls button {
-  background-color: var(--accent);
-  color: var(--background-primary);
-  border: none;
-  border-radius: var(--border-radius-sm);
-  padding: 5px 10px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.timer-controls button:hover {
-  background-color: var(--text-secondary);
-}
-
-/* Estilos para el cronómetro en modo oscuro */
-.nightMode .timer-container {
-  background-color: var(--background-secondary);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.nightMode #timer {
-  color: var(--text-primary);
-}
-
-.nightMode .timer-controls button {
-  background-color: var(--accent);
-  color: var(--background-primary);
-}
-
-.nightMode .timer-controls button:hover {
-  background-color: var(--text-secondary);
-}
-
-/* Responsividad para el cronómetro */
-@media (max-width: 480px) {
-  .timer-icon {
-    width: 25px;
-    height: 25px;
-  }
-  
-  .timer-container {
-    padding: 8px;
-  }
-  
-  #timer {
-    font-size: 18px;
-  }
-  
-  .timer-controls button {
-    padding: 4px 8px;
-    font-size: 11px;
-  }
-}

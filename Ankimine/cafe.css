@@ -1,0 +1,168 @@
+/* created by edenilsonlr https://github.com/Edenilson-LR/Anki-Templates */
+:root {
+  --card--color: #d7ccc8;
+  --background--color: #bcaaa4;
+  --text--color: #5d4037;
+  --hr--color: #8d6e63;
+  --night--background: #4e342e;
+  --box--color: #795548;
+  --night--hr: #795548;
+  --night--card: #3e2723;
+  --night--text: #8d6e63;
+}
+
+.card {
+  background: var(--card--color);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  align-items: center;
+}
+
+.flashcard {
+  display: block;
+  padding: 20px;
+  max-width: 200px;
+  min-height: 500px;
+  border: none;
+}
+
+.front {
+  display: block;
+  padding: 20px;
+  border-radius: 1rem;
+  color: var(--text--color);
+  background-color: var(--background--color);
+  box-shadow: 2px, 2px, 3px, 2px var(--box--color);
+}
+
+.back {
+  display: block;
+  padding: 20px;
+  border-radius: 1rem;
+  color: var(--text--color);
+  background-color: var(--background--color);
+  box-shadow: 2px, 2px, 3px, 2px var(--box--color);
+}
+
+hr {
+  border: 0;
+  border-bottom: 2px solid var(--hr--color);
+}
+
+.hint {
+  color: var(--night--text);
+  font-size: 12px;
+}
+
+svg {
+  color: var(--text--color);
+  stroke: var(--hr--color);
+}
+
+/* NIGHT MODE */
+
+.nightMode .card {
+  background: var(--night--card);
+}
+
+.nightMode .front,
+.nightMode .back {
+  display: block;
+  padding: 20px;
+  border-radius: 1em;
+  color: var(--night--text);
+  background: var(--night--background);
+}
+
+.nightMode hr {
+  border: 0;
+  color: var(--night--hr);
+  border-bottom: 2px solid var(--night--hr);
+}
+
+.nightMode .hint {
+  color: var(--night--text);
+  font-size: 12px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .flashcard {
+    max-width: 95vw;
+    min-height: auto;
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .card {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .front,
+  .back {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Botón de replay circular con colores café */
+  .replay-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border-radius: 50%;
+    background-color: var(--background--color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
+  }
+
+  .replay-button:hover {
+    background-color: var(--hr--color);
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(93, 64, 55, 0.4);
+  }
+
+  .replay-button:active {
+    transform: scale(0.95);
+  }
+
+  .replay-button svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--text--color);
+    transition: fill 0.3s ease;
+  }
+
+  .replay-button:hover svg {
+    fill: var(--card--color);
+  }
+
+  /* Modo nocturno */
+  .nightMode .replay-button {
+    background-color: var(--night--hr);
+    box-shadow: 0 4px 12px rgba(78, 52, 46, 0.5);
+  }
+
+  .nightMode .replay-button svg {
+    fill: var(--night--text);
+  }
+
+  .nightMode .replay-button:hover {
+    background-color: var(--night--background);
+    box-shadow: 0 6px 16px rgba(78, 52, 46, 0.6);
+  }
+
+  .nightMode .replay-button:hover svg {
+    fill: var(--night--card);
+  }
+}

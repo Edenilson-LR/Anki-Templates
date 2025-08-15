@@ -1,0 +1,111 @@
+:root {
+  --text--color: #2ea99d;
+  --stroke--color: #83cdc6;
+  --fill--color: #b4e0dc;
+  --shadow--color: #52b8af;
+  --hr--color: #15998c;
+  --night--card: #082D2E;
+  --night-shadow: #0e6c5f;
+  --night--text: #138c7f;
+  --night--fill: #107c6e;
+  --night--stroke: #52b8af;
+}
+
+.card {
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+}
+
+.front,
+.back {
+  display: block;
+  padding: 10px;
+  border-radius: 1em;
+  align-content: center;
+  color: var(--text--color);
+}
+
+.flashcard {
+  display: block;
+  align-content: center;
+  padding: 10px 12px 10px 12px;
+  max-width: 500px;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 1em;
+  box-shadow: .5px 2px 8px var(--shadow--color);
+}
+
+.replay-button svg circle {
+  fill: var(--stroke--color);
+  stroke: var(--stroke--color);
+  stroke-width: 1;
+}
+
+.replay-button svg path {
+  fill: var(--fill--color);
+  transform: scale(0.6) translate(19px, 20px);
+}
+
+hr {
+  margin: 0;
+  border-bottom: 1px solid var(--hr--color);
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 95%;
+  max-height: 95vh;
+}
+
+/* Night Mode */
+.nightMode .card {
+  background-color: var(--night--card);
+}
+
+.nightMode .front,
+.nightMode .back {
+  display: block;
+  padding: 10px;
+  border-radius: 1em;
+  align-content: center;
+  color: var(--night--text);
+}
+
+.nightMode .flashcard {
+  display: block;
+  padding: 10px 12px 10px 12px;
+  align-content: center;
+  max-width: 500px;
+  min-height: 200px;
+  margin: 0 auto;
+  border-radius: 1em;
+  background-color: var(--night--card);
+  box-shadow: .5px 2px 8px var(--night-shadow);
+}
+
+.nightMode .replay-button svg circle {
+  fill: var(--night--stroke);
+  stroke: var(--night--stroke);
+  stroke-width: 1;
+}
+
+.replay-button svg path {
+  fill: var(--night--fill);
+  transform: scale(0.6) translate(19px, 20px);
+}
+
+.nightMode hr {
+  margin: 0;
+  border-bottom: 1px solid var(--hr--color);
+  margin-bottom: 10px;
+}
+
+
+.nightMode .url {
+  font-size: 10px;
+  color: var(--night--text);
+}

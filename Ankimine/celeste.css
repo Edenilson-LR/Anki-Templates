@@ -1,0 +1,130 @@
+:root {
+    --background--color: #55371a;
+    --text--color: #43758c;
+    --hr--color:#43758c;
+    --stroke--color: #528fab;
+    --fill--color: #06161e;
+    --night--card: #003144;
+    --flashcard--color: #003144;
+    --night--text: #3ca5cb;
+    --night--hr: #3685a5;
+    --night--stroke: #135971;
+    --night--fill: #a6ccde;
+  }
+  
+  .card {
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+  }
+  
+  .front,
+  .back {
+    display: block;
+    padding: 10px;
+    border-radius: 1em;
+    align-content: center;
+    color: var(--text--color);
+  }
+  
+  .flashcard {
+    display: block;
+    align-content: center;
+    padding: 10px 12px 10px 12px;
+    max-width: 500px;
+    min-height: 200px;
+    margin: 0 auto;
+    border-radius: 1em;
+    box-shadow: .5px 2px 8px var(--text--color);
+  }
+
+
+  
+  .replay-button svg circle {
+    fill: var(--stroke--color);
+    stroke: var(--stroke--color);
+    stroke-width: 1;
+  }
+  .replay-button svg path {
+    fill: var(--fill--color);
+    transform: scale(0.6) translate(19px, 20px);
+  }
+  /* tradiccion de la palabra */
+  span.chn_tran {
+    color: var(--flashcard--color) !important;
+  }
+  
+  /* Traduccion de las oraciones */
+  span.chn_sent {
+    color: var(--fill--color) !important;
+  }
+  
+  hr {
+    margin: 0;
+    border-bottom: 1px solid var(--hr--color);
+    margin-bottom: 10px;
+  }
+  
+  img {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+  
+  /* Night Mode */
+  .nightMode .card {
+    background-color: var(--night--card);
+  }
+  
+  .nightMode .front,
+  .nightMode .back {
+    display: block;
+    padding: 10px;
+    border-radius: 1em;
+    align-content: center;
+    color: var(--night--text);
+  }
+  
+  .nightMode .flashcard {
+    display: block;
+    padding: 10px 12px 10px 12px;
+    align-content: center;
+    max-width: 500px;
+    min-height: 200px;
+    margin: 0 auto;
+    border-radius: 1em;
+    background-color: var(--flashcard--color);
+    box-shadow: .5px 2px 8px var(--night--stroke);
+  }
+  
+  .nightMode .replay-button svg circle {
+    fill: var(--night--stroke);
+    stroke: var(--night--stroke);
+    stroke-width: 1;
+  }
+  .replay-button svg path {
+    fill: var(--night--fill);
+    transform: scale(0.6) translate(19px, 20px);
+  }
+  
+  .nightMode hr {
+    margin: 0;
+    border-bottom: 1px solid var(--night--hr);
+    margin-bottom: 10px;
+  }
+  
+  
+  .nightMode .url {
+    font-size: 10px;
+    color: var(--text--color);
+  }
+  
+  .nightMode span.chn_tran {
+    color: var(--hr--color) !important;
+  }
+  
+  /* Traduccion de las oraciones */
+  .nightMode span.chn_sent {
+    color: var(--stroke--color) !important;
+  }
