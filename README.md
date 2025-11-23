@@ -24,10 +24,14 @@ para adaptarlo a tu campos.
 
 
 # Highlight Word
-<img width="400" height="400" alt="verde-azuladof" src="https://github.com/user-attachments/assets/1e13e581-0308-41ab-951d-00eacdb954cb" />
+<img width="406" height="200" alt="image" src="https://github.com/user-attachments/assets/f3d5f92e-35f1-4d26-be74-d371a6261191" />
+<img width="406" height="200" alt="image" src="https://github.com/user-attachments/assets/552e4285-aa8b-4a58-8fa7-c62d425d301d" />
 
 
-<img width="400" height="400" alt="verde-azuladob" src="https://github.com/user-attachments/assets/01d8798a-0118-4a73-9f3b-e145fcfc6e0b" />
+<img width="400" height="480" alt="image" src="https://github.com/user-attachments/assets/4cc42d6b-8349-4970-bbd1-879b06e7a193" />
+<img width="400" height="480" alt="image" src="https://github.com/user-attachments/assets/55c52259-b98c-4f66-91f6-12336701cc6a" />
+
+
 
 # Imput-learning
 
