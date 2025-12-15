@@ -1,0 +1,433 @@
+/* created by edenilsonlr https://github.com/Edenilson-LR/Anki-Templates */
+/* Diseño moderno estilo teal basado en UI conceptual */
+
+:root {
+  --teal-primary: #4A9B9B;
+  --teal-dark: #3A7A7A;
+  --teal-light: #6BB3B3;
+  --background-light: #E8E8E8;
+  --text-dark: #1A1A1A;
+  --text-light: #FFFFFF;
+  --field-bg: #5AABAB;
+  --night-bg: #1A2A2A;
+  --night-card: #2A3A3A;
+  --night-text: #B0E0E0;
+  --night-field: #3A5A5A;
+}
+
+.card {
+  background: var(--background-light);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  padding: 15px;
+  min-height: 100vh;
+}
+
+/* Flashcard Container */
+.flashcard {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* FRONT SIDE - Parte de anverso */
+.front {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  background-color: var(--teal-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(74, 155, 155, 0.3);
+  min-height: 80px;
+  gap: 15px;
+}
+
+.front .replay-button {
+  flex-shrink: 0;
+}
+
+.front .replay-button svg circle {
+  display: none;
+}
+
+.front .replay-button svg path {
+  fill: var(--text-light);
+  transform: none;
+}
+
+.front > *:not(.replay-button):not(.Audio) {
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 500;
+  flex: 1;
+  margin: 0;
+}
+
+.front .Audio {
+  flex-shrink: 0;
+}
+
+/* BACK SIDE - Parte de Reverso */
+.back {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background-color: var(--teal-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(74, 155, 155, 0.3);
+  min-height: 500px;
+  gap: 15px;
+}
+
+/* Header section - Expresion, IPA y Audio */
+.back-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.back-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.back-header-left > *:first-child {
+  color: var(--text-dark);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.back-header-left .ipa {
+  color: var(--text-dark);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.back-header .replay-button {
+  flex-shrink: 0;
+}
+
+.back-header .replay-button svg circle {
+  display: none;
+}
+
+.back-header .replay-button svg path {
+  fill: var(--text-light);
+  transform: none;
+}
+
+/* Definicion field */
+.definicion-field {
+  background-color: var(--field-bg);
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-size: 15px;
+  min-height: 40px;
+  border: none;
+  display: block;
+}
+
+/* Style any content that might be in definicion field */
+.definicion-field > * {
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Hide empty fields gracefully */
+.definicion-field:empty::before {
+  content: "";
+  display: block;
+  min-height: 20px;
+}
+
+/* Image gallery */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+  margin: 10px 0;
+  justify-content: flex-start;
+}
+
+.image-gallery img {
+  flex-shrink: 0;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Oracion section */
+.oracion-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.oracion-section .replay-button {
+  flex-shrink: 0;
+}
+
+.oracion-section .replay-button svg circle {
+  display: none;
+}
+
+.oracion-section .replay-button svg path {
+  fill: var(--text-light);
+  transform: none;
+}
+
+.oracion-section > *:not(.replay-button):not(.Audio) {
+  color: var(--text-dark);
+  font-size: 16px;
+  flex: 1;
+  margin: 0;
+}
+
+.oracion-section .Audio {
+  flex-shrink: 0;
+}
+
+/* Nota field */
+.nota-field {
+  background-color: var(--field-bg);
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-size: 14px;
+  min-height: 40px;
+  border: none;
+  display: block;
+}
+
+/* Style any content that might be in nota field */
+.nota-field > * {
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Hide empty fields gracefully */
+.nota-field:empty::before {
+  content: "";
+  display: block;
+  min-height: 20px;
+}
+
+/* URL field */
+.url-field {
+  color: var(--text-dark);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.back .url {
+  color: var(--text-dark);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.back .url a {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+.nightMode .back .url a {
+  color: var(--night-text);
+}
+
+/* General styling for replay buttons */
+.replay-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid var(--text-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.replay-button:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.replay-button:active {
+  transform: scale(0.95);
+}
+
+.replay-button svg {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+}
+
+.replay-button svg circle {
+  display: none;
+}
+
+.replay-button svg path {
+  fill: var(--text-light);
+  transform: none;
+}
+
+/* Audio container styling */
+.Audio {
+  display: inline-block;
+}
+
+/* Remove default hr styling or make it subtle */
+hr {
+  display: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Image gallery styling - already defined above, this is for fallback */
+.image-gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 0;
+}
+
+/* If images are direct children of back, style them */
+.back img:not(.image-gallery img) {
+  max-width: 200px;
+  max-height: 200px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+/* NIGHT MODE */
+.nightMode .card {
+  background: var(--night-bg);
+}
+
+.nightMode .front {
+  background-color: var(--night-card);
+  box-shadow: 0 4px 12px rgba(42, 58, 58, 0.5);
+}
+
+.nightMode .front > *:not(.replay-button) {
+  color: var(--night-text);
+}
+
+.nightMode .front .replay-button {
+  border-color: var(--text-light);
+}
+
+.nightMode .front .replay-button svg circle {
+  display: none;
+}
+
+.nightMode .front .replay-button svg path {
+  fill: var(--text-light);
+  transform: none;
+}
+
+.nightMode .back {
+  background-color: var(--night-card);
+  box-shadow: 0 4px 12px rgba(42, 58, 58, 0.5);
+}
+
+.nightMode .back-header-left > *:first-child,
+.nightMode .back-header-left .ipa,
+.nightMode .oracion-section > *:not(.replay-button),
+.nightMode .url {
+  color: var(--night-text);
+}
+
+.nightMode .definicion-field,
+.nightMode .nota-field {
+  background-color: var(--night-field);
+  color: var(--night-text);
+}
+
+.nightMode .definicion-field > *,
+.nightMode .nota-field > * {
+  color: var(--night-text);
+}
+
+.nightMode .back-header .replay-button,
+.nightMode .oracion-section .replay-button {
+  border-color: var(--text-light);
+}
+
+.nightMode .back-header .replay-button svg circle,
+.nightMode .oracion-section .replay-button svg circle {
+  display: none;
+}
+
+.nightMode .back-header .replay-button svg path,
+.nightMode .oracion-section .replay-button svg path {
+  fill: var(--text-light);
+  transform: none;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 600px) {
+  .card {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .flashcard {
+    max-width: 95vw;
+  }
+
+  .front {
+    padding: 15px 20px;
+    min-height: 70px;
+  }
+
+  .back {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .image-gallery img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .replay-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .replay-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
